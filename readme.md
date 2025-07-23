@@ -39,9 +39,15 @@ To add a new script, create a new `.cs` file in the `scripts` directory. Here's 
 ```csharp
 namespace UA_Nodeset_Utils_Playground.Scripts;
 
-public class MyNewScript
+using CESMII.OpcUa.NodeSetModel;
+using CESMII.OpcUa.NodeSetModel.Factory.Opc;
+using Microsoft.Extensions.Logging.Abstractions;
+using Opc.Ua;
+using Opc.Ua.Export;
+
+public class MyNewScript : BaseScript
 {
-    public void Run()
+    public static async Task RunAsync()
     {
         // Your script logic here
         Console.WriteLine("Hello from My New Script!");
